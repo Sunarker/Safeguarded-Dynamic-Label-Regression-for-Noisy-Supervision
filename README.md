@@ -16,10 +16,10 @@ If you use this code in your research, please cite
 ### Step through the codes.
 
 1. Form the noisy datasets.
-   ```Shell
-   # open a new shell
-   python dataset.py
-   ```
+  ```Shell
+  # open a new shell
+  python dataset.py
+  ```
 
 2. Train the model
   ```Shell
