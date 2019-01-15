@@ -2,7 +2,7 @@
 
 If you use this code in your research, please cite
 ```
-@inproceedings{ijcai2018-135,
+@inproceedings{aaai19-jiangchao,
   title     = {Safeguarded Dynamic Label Regression for Noisy Supervision},
   author    = {Jiangchao Yao, Hao Wu, Ya Zhang, Ivor W. Tsang and Jun Sun},
   booktitle = {Proceedings of the Association for the Advancement of Artificial Intelligence Conference on
