@@ -14,18 +14,22 @@ If you use this code in your research, please cite
 
 
 ### Step through the codes.
+
 1. Form the noisy datasets.
    ```Shell
+   # open a new shell
    python dataset.py
    ```
 
 2. Train the model
   ```Shell
-  python cifar10_train.py --train_dir results/events_ce/cifar10_train  # You can train other models like this one
+  # open a new shell
+  python cifar10_train.py --train_dir results/events_ce/cifar10_train --noise_rate 0.3 # You can train other models like this one
   ```
 
 3. Test and evaluate
   ```Shell
+  # open a new shell
   python cifar10_eval.py --checkpoint_dir results_ce/cifar10_train --eval_dir results/cifar10_eval 
   ```
   
@@ -33,3 +37,5 @@ If you use this code in your research, please cite
   ```Shell
   tensorboard --logdir=results/events_ce --port=8080
   ```
+
+### More running settings can be found by reading arguments in the code.
