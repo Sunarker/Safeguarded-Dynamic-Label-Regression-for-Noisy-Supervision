@@ -156,29 +156,7 @@ def loss_forward(logits, labels, T):
   # decay terms (L2 loss).
   return tf.add_n(tf.get_collection('losses'), name='total_loss')    
 
-  
-def loss_backward(logits, labels, T_inv):
-  """Define the backward noise-aware loss."""
-  labels = tf.one_hot(labels,cifar10.NUM_CLASSES,axis=-1)
-  labels = tf.cast(labels, tf.float32)
-  labels_aug = tf.matmul(labels,T_inv)
 
-  preds = tf.nn.softmax(logits)
-  preds = tf.clip_by_value(preds,1e-8,1-1e-8)
-
-  cross_entropy = -tf.reduce_sum(labels_aug*tf.log(preds),axis=-1,name='cross_entropy_per_example')
-  cross_entropy_mean = tf.reduce_mean(cross_entropy, name='cross_entropy')
-  l2_loss = tf.add_n([cifar10.WEIGHT_DECAY * tf.nn.l2_loss(tf.cast(v, tf.float32))
-                           for v in tf.trainable_variables() if 'batch_normalization' not in v.name],name='l2_loss')
-
-  tf.add_to_collection('losses', cross_entropy_mean)
-  tf.add_to_collection('losses', l2_loss)
-
-  # The total loss is defined as the cross entropy loss plus all of the weight
-  # decay terms (L2 loss).
-  return tf.add_n(tf.get_collection('losses'), name='total_loss')
-
-   
 def train(T_est,T_inv_est):
   """Train CIFAR-10 for a number of steps."""
   with tf.Graph().as_default():
@@ -203,7 +181,6 @@ def train(T_est,T_inv_est):
       loss = loss_forward(logits, labels, T_tru)
     else:
       loss = loss_forward(logits, labels, T_est)
-    #loss = loss_backward(logits, labels, T_inv_est)
 
     # Build a Graph that trains the model with one batch of examples and
     # updates the model parameters.
@@ -279,29 +256,6 @@ def main(argv=None):  # pylint: disable=unused-argument
     tf.gfile.DeleteRecursively(FLAGS.train_dir)
   tf.gfile.MakeDirs(FLAGS.train_dir)
 
-  #if not os.path.exists('T.pkl'):
-  #  T, T2 = estimation_T()
-  #  print('estimated T (I ) \n', T)
-  #  print('estimated T (II) \n', T2)
-
-  #  T_inv = np.linalg.inv(T)
-  #  T_inv2 = np.linalg.inv(T2)
-  #  print('estimated inverse T (I ) \n', T_inv)
-  #  print('estimated inverse T (II) \n', T_inv2)
-
-  #  with open('T.pkl','w') as w:
-  #     pickle.dump([T, T_inv, T2, T_inv2],w)
-
-  #else:
-  #  with open('T.pkl') as f:
-  #     data = pickle.load(f)
-  #     T, T_inv, T2, T_inv2 = data
-  #
-  #     print('estimated T (I ) \n', T)
-  #     print('estimated T (II) \n', T2)
-  #     print('estimated inverse T (I ) \n', T_inv)
-  #     print('estimated inverse T (II) \n', T_inv2)
-
   T, T2 = estimation_T()
   print('estimated T (I ) \n', T)
   print('estimated T (II) \n', T2)
@@ -314,8 +268,8 @@ def main(argv=None):  # pylint: disable=unused-argument
   with open('T_%.2f.pkl'%FLAGS.noise_ratio,'w') as w:
      pickle.dump([T, T_inv, T2, T_inv2],w)
 
-  #train(T,T_inv)
-  train(T2,T_inv2)
+  train(T,T_inv)
+  #train(T2,T_inv2)
 
 if __name__ == '__main__':
   tf.app.run()
