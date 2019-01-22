@@ -30,7 +30,7 @@ If you use this code in your research, please cite
 3. Test and evaluate
   ```Shell
   # open a new shell
-  python cifar10_eval.py --checkpoint_dir results_ce/cifar10_train --eval_dir results/cifar10_eval 
+  python cifar10_eval.py --checkpoint_dir results/events_ce/cifar10_train --eval_dir results/cifar10_eval 
   ```
   
 4. Visualization with Tensorboard
