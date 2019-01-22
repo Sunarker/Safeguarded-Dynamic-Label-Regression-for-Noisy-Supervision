@@ -1,4 +1,4 @@
-# Safeguarded-Dynamic-Label-Regression-for-Noisy-Supervision
+# Safeguarded-Dynamic-Label-Regression-for-Noisy-Supervision  [presentation](https://) [poster](https://) 
 
 If you use this code in your research, please cite
 ```
