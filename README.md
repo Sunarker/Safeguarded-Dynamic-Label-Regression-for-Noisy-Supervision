@@ -1,4 +1,7 @@
-# Safeguarded-Dynamic-Label-Regression-for-Noisy-Supervision  [presentation](https://) [poster](https://) 
+# Safeguarded-Dynamic-Label-Regression-for-Noisy-Supervision  
+
+[Paper](https://github.com/Sunarker/Safeguarded-Dynamic-Label-Regression-for-Noisy-Supervision) [presentation](
+        Safeguarded-Dynamic-Label-Regression-for-Noisy-Supervision/presentation.pdf) [poster](Safeguarded-Dynamic-Label-Regression-for-Noisy-Supervision/AAAI2019_Poster.pdf) 
 
 If you use this code in your research, please cite
 ```
