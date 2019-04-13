@@ -50,7 +50,7 @@ If you use this code in your research, please cite
   python cifar10_train_varC.py --init_dir results/events_ce/cifar10_train --train_dir results/events_varC/cifar10_train --noise_rate 0.3 # You can train other models like this one
   ```
 
-# Note that step 3, 4, 5 are based on the classifier pretraining in step 1 and among them, they also have the internal inheritance relationship due to the transition matrix initialization. Please execute them sequentially. However, this does not mean a shortcoming of the model. You can easily modify them into parallel versions by integrating the classifier pretraining and transition initialization into one script.
+#### Note that step 3, 4, 5 are based on the classifier pretraining in step 1 and among them, they also have the internal inheritance relationship due to the transition matrix initialization. Please execute them sequentially. However, this does not mean a shortcoming of the model. You can easily modify them into parallel versions by integrating the classifier pretraining and transition initialization into one script.
 
 ### Test and evaluate
   ```Shell
