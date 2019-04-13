@@ -18,14 +18,12 @@ If you use this code in your research, please cite
 
 ### Form the noisy datasets.
   ```Shell
-  # open a new shell
   python dataset.py
   ```
 
 ### Train the models.
 1. Train DNNs directly with the cross-entropy loss (CE).
   ```Shell
-  # open a new shell
   python cifar10_train.py --train_dir results/events_ce/cifar10_train --noise_rate 0.3 # You can train other models like this one
   ```
 
