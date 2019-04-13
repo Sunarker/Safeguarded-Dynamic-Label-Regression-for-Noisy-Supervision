@@ -16,27 +16,50 @@ If you use this code in your research, please cite
 ```
 
 
-### Step through the codes.
-
-1. Form the noisy datasets.
+### Form the noisy datasets.
   ```Shell
   # open a new shell
   python dataset.py
   ```
 
-2. Train the model
+### Train the models.
+1. Train DNNs directly with the cross-entropy loss.
   ```Shell
   # open a new shell
   python cifar10_train.py --train_dir results/events_ce/cifar10_train --noise_rate 0.3 # You can train other models like this one
   ```
 
-3. Test and evaluate
+2. Train Bootstrapping
+```Shell
+  # open a new shell
+  python cifar10_train_bootstrapping.py --train_dir results/events_bootstrapping/cifar10_train --noise_rate 0.3 # You can train other models like this one
+  ```
+
+3. Train Forward 
+```Shell
+  # open a new shell
+  python cifar10_train_T.py --init_dir results/events_ce/cifar10_train --train_dir results/events_T/cifar10_train --noise_rate 0.3 # You can train other models like this one
+  ```
+  
+4. Train S-adaptation
+```Shell
+  # open a new shell
+  python cifar10_train_varT.py --init_dir results/events_ce/cifar10_train --train_dir results/events_varT/cifar10_train --noise_rate 0.3 # You can train other models like this one
+  ```
+  
+5. Train LCCN
+```Shell
+  # open a new shell
+  python cifar10_train_varC.py --init_dir results/events_ce/cifar10_train --train_dir results/events_varC/cifar10_train --noise_rate 0.3 # You can train other models like this one
+  ```
+
+### Test and evaluate
   ```Shell
   # open a new shell
   python cifar10_eval.py --checkpoint_dir results/events_ce/cifar10_train --eval_dir results/cifar10_eval 
   ```
   
-4. Visualization with Tensorboard
+### Visualization with Tensorboard
   ```Shell
   tensorboard --logdir=results/events_ce --port=8080
   ```
