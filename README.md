@@ -23,7 +23,7 @@ If you use this code in your research, please cite
   ```
 
 ### Train the models.
-1. Train DNNs directly with the cross-entropy loss.
+1. Train DNNs directly with the cross-entropy loss (CE).
   ```Shell
   # open a new shell
   python cifar10_train.py --train_dir results/events_ce/cifar10_train --noise_rate 0.3 # You can train other models like this one
@@ -55,12 +55,13 @@ If you use this code in your research, please cite
 
 ### Test and evaluate
   ```Shell
-  # open a new shell
+  # open a new shell. (Take CE as the example)
   python cifar10_eval.py --checkpoint_dir results/events_ce/cifar10_train --eval_dir results/cifar10_eval 
   ```
   
 ### Visualization with Tensorboard
   ```Shell
+  # open a new shell. (Take CE as the example)
   tensorboard --logdir=results/events_ce --port=8080
   ```
 
