@@ -29,7 +29,6 @@ If you use this code in your research, please cite
 
 2. Train Bootstrapping
 ```Shell
-  # open a new shell
   python cifar10_train_bootstrapping.py --train_dir results/events_bootstrapping/cifar10_train --noise_rate 0.3 # You can train other models like this one
   ```
 
