@@ -62,3 +62,5 @@ If you use this code in your research, please cite
   ```
 
 ### More running settings can be found by reading arguments in the code.
+
+### [For clothing1M, please check here](https://www.google.com)
