@@ -87,7 +87,8 @@ def train():
     # perceptual loss
     preds = tf.nn.softmax(logits)
     preds = tf.clip_by_value(preds, 1e-8, 1-1e-8)
-    loss2 = tf.reduce_mean(-tf.reduce_sum(preds*tf.log(preds),axis=-1), name='perceptual_certainty')
+    loss2 = tf.reduce_mean(-tf.reduce_sum(preds*tf.log(preds),axis=-1), name='perceptual_certainty_soft')
+    #loss2 = tf.reduce_mean(-tf.reduce_sum(tf.stop_gradient(tf.to_float(tf.one_hot(tf.argmax(preds,axis=-1),depth=cifar10.NUM_CLASSES,axis=-1)))*tf.log(preds),axis=-1), name='perceptual_certainty_hard')
     tf.add_to_collection('losses', loss2)
 
     # l2 loss
