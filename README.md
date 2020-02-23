@@ -1,6 +1,6 @@
-# Safeguarded-Dynamic-Label-Regression-for-Noisy-Supervision  
+# Safeguarded-Dynamic-Label-Regression-for-Generalized-Noisy-Supervision  
 
-[[Paper]](https://sunarker.github.io/temp/AAAI2019_Dynamic_Label_Regression_for_Noisy_Supervision.pdf) [[Presentation]](
+[[Paper]](https://arxiv.org/pdf/1903.02152.pdf) [[Presentation]](
         https://sunarker.github.io/temp/AAAI2019_Presentation.pdf) [[Poster]](https://sunarker.github.io/temp/AAAI2019_Poster.pdf) 
 
 If you use this code in your research, please cite
@@ -12,6 +12,15 @@ If you use this code in your research, please cite
                Artificial Intelligence, {AAAI-19}},
   publisher = {Association for the Advancement of Artificial Intelligence Conference},
   year      = {2019}
+}
+```
+and its extended version
+```
+@article{yao2019safeguarded,
+  title={Safeguarded Dynamic Label Regression for Generalized Noisy Supervision},
+  author={Yao, Jiangchao and Zhang, Ya and Tsang, Ivor W and Sun, Jun},
+  journal={arXiv preprint arXiv:1903.02152},
+  year={2019}
 }
 ```
 
@@ -63,4 +72,4 @@ If you use this code in your research, please cite
 
 ### More running settings can be found by reading arguments in the code.
 
-#### [For clothing1M, please check here](https://github.com/Sunarker/LCCN-Clothing1M)
+#### [For clothing1M and WebVision, please check here](https://github.com/Sunarker/LCCN-Clothing1M)
