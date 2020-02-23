@@ -70,6 +70,12 @@ and its extended version
   tensorboard --logdir=results/events_ce --port=8080
   ```
 
-### More running settings can be found by reading arguments in the code.
 
-#### [For clothing1M and WebVision, please check here](https://github.com/Sunarker/LCCN-Clothing1M)
+
+### [For clothing1M and WebVision, please check here](https://github.com/Sunarker/LCCN-Clothing1M)
+
+This is the code of the Clothing-1M experiments. Similarly, we have provided multiple scripts to run the baselines and our model. The parameters also have been hard-coded in the script. 
+
+In addition, it is almost the same code of the WebVision experiments. You can simply organize the data structure of WebVision like Clothing1M and run the codes. 
+
+### More running settings can be found by reading arguments in the code and check our paper.
