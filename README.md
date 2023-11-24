@@ -13,16 +13,6 @@ If you use this code in your research, please cite
   publisher = {Association for the Advancement of Artificial Intelligence Conference},
   year      = {2019}
 }
-```
-and its extended version
-```
-@article{yao2019safeguarded,
-  title={Safeguarded Dynamic Label Regression for Generalized Noisy Supervision},
-  author={Yao, Jiangchao and Zhang, Ya and Tsang, Ivor W and Sun, Jun},
-  journal={arXiv preprint arXiv:1903.02152},
-  year={2019}
-}
-```
 
 
 ### Form the noisy datasets.
